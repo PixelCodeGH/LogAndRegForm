@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoTrade Pro</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <div class="auth-page">
+        <div class="auth-container">
+            <!-- Login Form -->
+            <div class="auth-card" id="loginForm">
+                <div class="auth-header">
+                    <h1>Welcome back</h1>
+                    <p>Enter your credentials to access your account</p>
+                </div>
+
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <div class="input-wrapper">
+                            <i data-feather="mail" class="icon"></i>
+                            <input type="email" id="email" placeholder="Enter your email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-wrapper">
+                            <i data-feather="lock" class="icon"></i>
+                            <input type="password" id="password" placeholder="Enter your password">
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox">
+                            <span>Remember me</span>
+                        </label>
+                        <button type="button" class="forgot-password" onclick="showForm('forgotForm')">Forgot password?</button>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Sign In</button>
+                </form>
+
+                <div class="auth-footer">
+                    Don't have an account? <a href="#" onclick="showForm('signupForm')">Sign up</a>
+                </div>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div class="auth-card hidden" id="signupForm">
+                <div class="auth-header">
+                    <h1>Create Account</h1>
+                    <p>Enter your details to create your account</p>
+                </div>
+
+                <form>
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <div class="input-wrapper">
+                            <i data-feather="user" class="icon"></i>
+                            <input type="text" id="signupName" placeholder="Enter your full name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupEmail">Email</label>
+                        <div class="input-wrapper">
+                            <i data-feather="mail" class="icon"></i>
+                            <input type="email" id="signupEmail" placeholder="Enter your email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <div class="input-wrapper">
+                            <i data-feather="lock" class="icon"></i>
+                            <input type="password" id="signupPassword" placeholder="Create a password">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="input-wrapper">
+                            <i data-feather="lock" class="icon"></i>
+                            <input type="password" id="confirmPassword" placeholder="Confirm your password">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Create Account</button>
+                </form>
+
+                <div class="auth-footer">
+                    Already have an account? <a href="#" onclick="showForm('loginForm')">Sign in</a>
+                </div>
+            </div>
+
+            <!-- Forgot Password Form -->
+            <div class="auth-card hidden" id="forgotForm">
+                <div class="auth-header">
+                    <h1>Reset Password</h1>
+                    <p>Enter your email to receive reset instructions</p>
+                </div>
+
+                <form>
+                    <div class="form-group">
+                        <label for="resetEmail">Email</label>
+                        <div class="input-wrapper">
+                            <i data-feather="mail" class="icon"></i>
+                            <input type="email" id="resetEmail" placeholder="Enter your email">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Send Reset Link</button>
+                </form>
+
+                <div class="auth-footer">
+                    Remember your password? <a href="#" onclick="showForm('loginForm')">Sign in</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        feather.replace();
+
+        function showForm(formId) {
+            document.querySelectorAll('.auth-card').forEach(form => {
+                form.classList.add('hidden');
+            });
+            document.getElementById(formId).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html> 
